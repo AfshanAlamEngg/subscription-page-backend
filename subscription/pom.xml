@@ -12,7 +12,7 @@
 	<artifactId>subscription</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>subscription</name>
-	<description>Demo project for Spring Boot</description>
+	<description>A subscription page for Qrencia using React JS for frontend and spring boot and JDK 17 for backend</description>
 	<url/>
 	<licenses>
 		<license/>
