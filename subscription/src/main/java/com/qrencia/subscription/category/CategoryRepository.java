@@ -1,12 +1,21 @@
 package com.qrencia.subscription.category;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import java.util.List;
+import org.springframework.data.jpa.repository.*;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface CategoryRepository extends JpaRepository<Category, Integer> {
-    // This interface extends JpaRepository to provide CRUD operations for Category entities.
-    // The first parameter is the entity type (Category), and the second is the type of the entity's primary key (Integer).
-    
-    // Additional custom query methods can be defined here if needed.
-    // For example:
-    // List<Category> findByName(String name);
+    @Query("SELECT c FROM Category c ORDER BY c.name ASC")
+    List<Category> findAllSorted();
+
+    @Query("SELECT c FROM Category c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :name, '%'))")
+    List<Category> findByName(@Param("name") String name);
+
+    @Query("SELECT c FROM Category c JOIN c.tiers t WHERE t.tierId = :tierId")
+    List<Category> findByTier(@Param("tierId") Integer tierId);
+
+    @Query("SELECT c FROM Category c JOIN c.features f WHERE f.featureId = :featureId")  // 🚀 Updated reference
+    List<Category> findByFeature(@Param("featureId") Integer featureId);  // 🚀 Updated method name
 }
