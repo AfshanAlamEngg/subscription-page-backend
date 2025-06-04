@@ -54,12 +54,24 @@ Make sure you have **JDK 17** and **Maven** installed.
 ```sh
 git clone https://github.com/AfshanAlamEngg/subscription-page-backend.git
 cd subscription-page-backend
+cd subscription
 ```
 
 3️⃣ **Run the Application**  
 ```sh
 mvn spring-boot:run
 ```
+
+4️⃣ **Play with APIs using SWAGGER UI**  
+```sh
+http://localhost:8080/swagger-ui/index.html
+```
+![image](https://github.com/user-attachments/assets/46d4e060-1c81-41a8-8375-117c226c17ca)
+
+```sh
+http://localhost:8080/swagger-ui/index.html#/hello-world-controller/index
+```
+![image](https://github.com/user-attachments/assets/71b1de6b-7cdb-47b5-9997-1eb59f177b0b)
 
 This will start the backend server locally using **H2 by default**.  
 
