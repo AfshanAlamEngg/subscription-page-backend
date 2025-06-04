@@ -62,7 +62,17 @@ cd subscription
 mvn spring-boot:run
 ```
 
-4️⃣ **Play with APIs using SWAGGER UI**  
+4️⃣ **Play with the H2 database**  
+```sh
+http://localhost:8080//h2-console/
+```
+![image](https://github.com/user-attachments/assets/fe65c8be-ebf6-4050-91ce-23b27dabb65c)
+
+Springboot Entities in H2 as Tables
+![image](https://github.com/user-attachments/assets/6950c01c-993f-4fc1-9346-205f600ed191)
+
+
+5️⃣ **Play with APIs using SWAGGER UI**  
 ```sh
 http://localhost:8080/swagger-ui/index.html
 ```
